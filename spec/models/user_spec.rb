@@ -3,6 +3,10 @@ require "rails_helper"
 describe User do
   subject(:user) { build(:user) }
 
+  it "has the default user role" do
+    expect(user.user?).to be_truthy
+  end
+
   context "#valid?" do
     subject { user.valid? }
 
